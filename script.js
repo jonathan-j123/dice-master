@@ -15,45 +15,49 @@ const playerDiceRoll = function () {
 };
 
 const playerDiceImage = function (playerDice) {
-  playerDice = playerDiceRoll();
   switch (playerDice) {
     case 1:
-      return "url('images/dice/dice-1.png')";
+      return "images/dice/dice-1.png";
     case 2:
-      return "url('images/dice/dice-1.png')";
+      return "images/dice/dice-2.png";
     case 3:
-      return "url('images/dice/dice-1.png')";
+      return "images/dice/dice-3.png";
     case 4:
-      return "url('images/dice/dice-1.png')";
+      return "images/dice/dice-4.png";
     case 5:
-      return "url('images/dice/dice-1.png')";
+      return "images/dice/dice-5.png";
     case 6:
-      return "url('images/dice/dice-1.png')";
+      return "images/dice/dice-5.png";
   }
 };
 const enemyDiceImage = function (enemyDice) {
-  enemyDice = playerDiceRoll();
   switch (enemyDice) {
     case 1:
-      return "url('images/dice/dice-1.png')";
+      return "images/dice/dice-1.png";
     case 2:
-      return "url('images/dice/dice-1.png')";
+      return "images/dice/dice-2.png";
     case 3:
-      return "url('images/dice/dice-1.png')";
+      return "images/dice/dice-3.png";
     case 4:
-      return "url('images/dice/dice-1.png')";
+      return "images/dice/dice-4.png";
     case 5:
-      return "url('images/dice/dice-1.png')";
+      return "images/dice/dice-5.png";
     case 6:
-      return "url('images/dice/dice-1.png')";
+      return "images/dice/dice-6.png";
   }
 };
 
 const diceScoring = function (playerDice, enemyDice) {
-  document.querySelector(".player .dice").style.src = playerDiceImage();
-  document.querySelector(".enemy .dice").style.src = enemyDiceImage();
   playerDice = playerDiceRoll();
   enemyDice = enemyDiceRoll();
+
+  document
+    .querySelector(".player .dice")
+    .setAttribute("src", playerDiceImage(playerDice));
+  document
+    .querySelector(".enemy .dice")
+    .setAttribute("src", enemyDiceImage(enemyDice));
+
   //   alert(`Player dice: ${playerDice} \nEnemy dice: ${enemyDice}`);
   if (playerDice > enemyDice) return (player.points += playerDice);
   if (enemyDice > playerDice) return (enemy.points += enemyDice);
@@ -61,9 +65,7 @@ const diceScoring = function (playerDice, enemyDice) {
 };
 
 function matchExecution() {
-  for (let i = 0; i < 100; i++) {
-    diceScoring();
-  }
+  diceScoring();
   document.querySelector(
     "#enemyScore"
   ).innerHTML = `<strong>Score: ${enemy.points} </strong>`;
