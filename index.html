@@ -27,7 +27,7 @@
           />
           <div>
             <h2>Player</h2>
-            <h3><strong>Score:</strong></h3>
+            <h3 id="playerScore"><strong>Score: 0</strong></h3>
           </div>
         </div>
         <div class="dice"></div>
@@ -42,7 +42,7 @@
         <div class="profile">
           <div>
             <h2>Enemy</h2>
-            <h3><strong>Score:</strong></h3>
+            <h3 id="enemyScore"><strong>Score: 0</strong></h3>
           </div>
 
           <img
@@ -57,7 +57,9 @@
         </p>
       </div>
     </section>
-    <button class="rollButton playerText">🎲ROLL THE DICE🎲</button>
+    <button class="rollButton playerText" onClick="matchExecution()">
+      🎲ROLL THE DICE🎲
+    </button>
 
     <footer>© All rights reserve</footer>
     <script src="script.js" defer></script>
