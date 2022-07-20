@@ -27,7 +27,7 @@ const playerDiceImage = function (playerDice) {
     case 5:
       return "images/dice/dice-5.png";
     case 6:
-      return "images/dice/dice-5.png";
+      return "images/dice/dice-6.png";
   }
 };
 const enemyDiceImage = function (enemyDice) {
