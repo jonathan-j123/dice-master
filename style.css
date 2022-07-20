@@ -91,7 +91,6 @@ h1 {
 }
 
 .dice {
-  src: url("images/dice/dice-1.png");
   width: 100px;
   background-color: whitesmoke;
   border-radius: 10px;
