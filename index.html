@@ -5,10 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-
     <title>Document</title>
   </head>
   <body>
+    <header>
+      <h1>DICE MASTER</h1>
+      <h3>
+        <span class="playerText">BE THE CHAMPION</span>, SAVE THE WORLD BY
+        DEFEATING THE
+        <span class="enemyText">DICE SORCERER</span>
+      </h3>
+    </header>
+
+    <section id="arena">
+      <div class="player">
+        <div class="profile">
+          <img
+            class="profileImage"
+            src="https://images.pexels.com/photos/2589650/pexels-photo-2589650.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt=""
+          />
+          <div>
+            <h2>Player</h2>
+            <h3><strong>Score:</strong></h3>
+          </div>
+        </div>
+        <div class="dice"></div>
+        <p class="playerText">
+          The main character with the power of friendship, strengthened by Vin
+          Diesel's family tree
+        </p>
+      </div>
+      <span class="versus">VS</span>
+      <div class="enemy">
+        <div class="dice"></div>
+        <div class="profile">
+          <div>
+            <h2>Enemy</h2>
+            <h3><strong>Score:</strong></h3>
+          </div>
+
+          <img
+            class="profileImage"
+            src="https://images.pexels.com/photos/12638480/pexels-photo-12638480.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+        </div>
+        <p class="enemyText">
+          The Dice Sorcerer who mastered all magic and dice, never experience
+          defeat, but no friends and family.
+        </p>
+      </div>
+    </section>
+    <button class="rollButton"></button>
+
     <script src="script.js" defer></script>
   </body>
 </html>
