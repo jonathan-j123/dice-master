@@ -14,13 +14,50 @@ const playerDiceRoll = function () {
   return player.dice[Math.floor(Math.random() * player.dice.length)];
 };
 
+const playerDiceImage = function (playerDice) {
+  playerDice = playerDiceRoll();
+  switch (playerDice) {
+    case 1:
+      return "url('images/dice/dice-1.png')";
+    case 2:
+      return "url('images/dice/dice-1.png')";
+    case 3:
+      return "url('images/dice/dice-1.png')";
+    case 4:
+      return "url('images/dice/dice-1.png')";
+    case 5:
+      return "url('images/dice/dice-1.png')";
+    case 6:
+      return "url('images/dice/dice-1.png')";
+  }
+};
+const enemyDiceImage = function (enemyDice) {
+  enemyDice = playerDiceRoll();
+  switch (enemyDice) {
+    case 1:
+      return "url('images/dice/dice-1.png')";
+    case 2:
+      return "url('images/dice/dice-1.png')";
+    case 3:
+      return "url('images/dice/dice-1.png')";
+    case 4:
+      return "url('images/dice/dice-1.png')";
+    case 5:
+      return "url('images/dice/dice-1.png')";
+    case 6:
+      return "url('images/dice/dice-1.png')";
+  }
+};
+
 const diceScoring = function (playerDice, enemyDice) {
+  document.querySelector(".player .dice").style.src = playerDiceImage();
+  document.querySelector(".enemy .dice").style.src = enemyDiceImage();
   playerDice = playerDiceRoll();
   enemyDice = enemyDiceRoll();
   //   alert(`Player dice: ${playerDice} \nEnemy dice: ${enemyDice}`);
   if (playerDice > enemyDice) return (player.points += playerDice);
   if (enemyDice > playerDice) return (enemy.points += enemyDice);
-  if (playerDice === enemyDice) return console.log("draw");
+  if (playerDice === enemyDice) return player.points;
 };
 
 function matchExecution() {
