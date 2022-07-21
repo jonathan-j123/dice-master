@@ -1,11 +1,17 @@
 const enemy = {
-  points: 0,
+  healthPoints: 100,
   dice: [1, 2, 3, 4, 5, 5, 6, 6],
 };
 const player = {
-  points: 0,
+  healthPoints: 100,
   dice: [1, 2, 3, 4, 5, 6],
 };
+document.querySelector(
+  "#enemyScore"
+).innerHTML = `<strong>Score: ${enemy.healthPoints} </strong>`;
+document.querySelector(
+  "#playerScore"
+).innerHTML = `<strong>Score: ${player.healthPoints} </strong>`;
 
 const enemyDiceRoll = function () {
   return enemy.dice[Math.floor(Math.random() * enemy.dice.length)];
@@ -59,17 +65,36 @@ const diceScoring = function (playerDice, enemyDice) {
     .setAttribute("src", enemyDiceImage(enemyDice));
 
   //   alert(`Player dice: ${playerDice} \nEnemy dice: ${enemyDice}`);
-  if (playerDice > enemyDice) return (player.points += playerDice);
-  if (enemyDice > playerDice) return (enemy.points += enemyDice);
-  if (playerDice === enemyDice) return player.points;
+  if (playerDice > enemyDice) return (enemy.healthPoints -= playerDice);
+  if (enemyDice > playerDice) return (player.healthPoints -= enemyDice);
+  if (playerDice === enemyDice) return player.healthPoints;
 };
 
-function matchExecution() {
-  diceScoring();
+const healthStatus = function (result) {
+  if (result < 1) {
+    if (player.healthPoints > enemy.healthPoints) {
+      document.querySelector(".rollButton").style.visibility = "hidden";
+      document.querySelector("#arena").innerHTML =
+        "<h1 class='playerText' style='padding: 50px 0;'>🎉PLAYER WON!🎉</h1>";
+      alert("The Player has wOn!");
+    } else {
+      document.querySelector(".rollButton").style.visibility = "hidden";
+      document.querySelector("#arena").innerHTML =
+        "<h1 class='enemyText' style='padding: 50px 0;'>😱ENEMY WON😱 </h1>";
+      alert("The Dice Sorcerer has won 😢 ");
+    }
+  }
+};
+
+function matchExecution(result) {
+  result = diceScoring();
   document.querySelector(
     "#enemyScore"
-  ).innerHTML = `<strong>Score: ${enemy.points} </strong>`;
+  ).innerHTML = `<strong>Score: ${enemy.healthPoints} </strong>`;
   document.querySelector(
     "#playerScore"
-  ).innerHTML = `<strong>Score: ${player.points} </strong>`;
+  ).innerHTML = `<strong>Score: ${player.healthPoints} </strong>`;
+  if (player.healthPoints <= 0 || enemy.healthPoints <= 0)
+    return healthStatus(0);
+  healthStatus(result);
 }
