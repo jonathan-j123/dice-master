@@ -27,6 +27,7 @@ h6 {
 h1 {
   font-family: "Black Ops One", cursive;
   font-size: 5rem;
+  text-align: center;
 }
 
 /* player and enemy color text */
@@ -57,6 +58,7 @@ h1 {
   padding: 10px;
   flex-wrap: wrap;
   width: 450px;
+  align-items: center;
 }
 
 .versus {
@@ -94,8 +96,16 @@ h1 {
   width: 100px;
   background-color: whitesmoke;
   border-radius: 10px;
-  margin: 10px;
 }
+
+.player .dice {
+  margin-left: 10px;
+}
+
+.enemy .dice {
+  margin-right: 10px;
+}
+
 .rollButton {
   display: block;
   position: sticky;
@@ -115,4 +125,19 @@ footer {
   padding: 5% 0;
   text-align: center;
   color: black;
+}
+
+@media (max-width: 1085px) {
+  h1 {
+    font-size: 3rem;
+  }
+  .versus {
+    font-size: 2.5rem;
+    text-align: center;
+    width: 100%;
+  }
+  .dice {
+    width: 50px;
+    height: 50px;
+  }
 }
