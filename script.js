@@ -9,10 +9,10 @@ const player = {
 //This will set the initial health points
 document.querySelector(
   "#enemyScore"
-).innerHTML = `<strong>Score: ${enemy.healthPoints} </strong>`;
+).innerHTML = `<strong>Health: ${enemy.healthPoints} </strong>`;
 document.querySelector(
   "#playerScore"
-).innerHTML = `<strong>Score: ${player.healthPoints} </strong>`;
+).innerHTML = `<strong>Health: ${player.healthPoints} </strong>`;
 
 const enemyDiceRoll = function () {
   return enemy.dice[Math.floor(Math.random() * enemy.dice.length)];
