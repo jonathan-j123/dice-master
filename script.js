@@ -6,12 +6,6 @@ const player = {
   healthPoints: 100,
   dice: [1, 2, 3, 4, 5, 6],
 };
-document.querySelector(
-  "#enemyScore"
-).innerHTML = `<strong>Health(HP): ${enemy.healthPoints} </strong>`;
-document.querySelector(
-  "#playerScore"
-).innerHTML = `<strong>Health(HP): ${player.healthPoints} </strong>`;
 
 const enemyDiceRoll = function () {
   return enemy.dice[Math.floor(Math.random() * enemy.dice.length)];
@@ -90,10 +84,10 @@ function matchExecution(result) {
   result = diceScoring();
   document.querySelector(
     "#enemyScore"
-  ).innerHTML = `<strong>Score: ${enemy.healthPoints} </strong>`;
+  ).innerHTML = `<strong>Health: ${enemy.healthPoints} </strong>`;
   document.querySelector(
     "#playerScore"
-  ).innerHTML = `<strong>Score: ${player.healthPoints} </strong>`;
+  ).innerHTML = `<strong>Health: ${player.healthPoints} </strong>`;
   if (player.healthPoints <= 0 || enemy.healthPoints <= 0)
     return healthStatus(0);
   healthStatus(result);
