@@ -8,10 +8,10 @@ const player = {
 };
 document.querySelector(
   "#enemyScore"
-).innerHTML = `<strong>Score: ${enemy.healthPoints} </strong>`;
+).innerHTML = `<strong>Health(HP): ${enemy.healthPoints} </strong>`;
 document.querySelector(
   "#playerScore"
-).innerHTML = `<strong>Score: ${player.healthPoints} </strong>`;
+).innerHTML = `<strong>Health(HP): ${player.healthPoints} </strong>`;
 
 const enemyDiceRoll = function () {
   return enemy.dice[Math.floor(Math.random() * enemy.dice.length)];
